@@ -29,6 +29,13 @@ Jira Python Library
     :target: https://requires.io/github/pycontribs/jira/requirements/?branch=main
     :alt: Requirements Status
 
+.. image:: https://github.com/adehad/jira/actions/workflows/jira_server_ci.yml/badge.svg
+    :target: https://github.com/adehad/jira/actions/workflows/jira_server_ci.yml
+    :alt: Jira Server CI
+
+.. image:: https://github.com/adehad/jira/actions/workflows/jira_cloud_ci.yml/badge.svg
+    :target: https://github.com/adehad/jira/actions/workflows/jira_cloud_ci.yml
+    :alt: Jira Cloud CI
 
 This library eases the use of the Jira REST API from Python and it has been used in production for years.
 
