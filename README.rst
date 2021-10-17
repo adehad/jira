@@ -29,6 +29,10 @@ Jira Python Library
     :target: https://requires.io/github/pycontribs/jira/requirements/?branch=main
     :alt: Requirements Status
 
+.. image:: https://dev.azure.com/adehadd/adehad_jira/_apis/build/status/adehad.jira?branchName=master&label=Jira%20Cloud%20Pipeline
+    :target: https://dev.azure.com/adehadd/adehad_jira/_build/latest?definitionId=1&branchName=master
+    :alt: Jira Cloud Build Status
+
 
 This library eases the use of the Jira REST API from Python and it has been used in production for years.
 
