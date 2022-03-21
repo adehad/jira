@@ -1,12 +1,12 @@
 ---
 repos:
-  - repo: https://github.com/python/black
-    rev: 21.9b0
+  - repo: https://github.com/psf/black
+    rev: 22.1.0
     hooks:
       - id: black
         language_version: python3
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.0.1
+    rev: v4.1.0
     hooks:
       - id: end-of-file-fixer
       - id: trailing-whitespace
@@ -31,12 +31,12 @@ repos:
         args: []
         require_serial: false
         additional_dependencies: []
-  - repo: https://gitlab.com/pycqa/flake8
-    rev: 3.9.2
+  - repo: https://github.com/PyCQA/flake8
+    rev: 4.0.1
     hooks:
       - id: flake8
   - repo: https://github.com/pycqa/isort
-    rev: 5.9.3
+    rev: 5.10.1
     hooks:
       - id: isort
         name: isort
@@ -46,14 +46,14 @@ repos:
       - id: yamllint
         files: \.(yaml|yml)$
   - repo: https://github.com/pre-commit/mirrors-mypy.git
-    rev: v0.910
+    rev: v0.941
     hooks:
       - id: mypy
         additional_dependencies:
           - types-requests
           - types-pkg_resources
   - repo: https://github.com/asottile/pyupgrade
-    rev: v2.29.0
+    rev: v2.31.1
     hooks:
       - id: pyupgrade
         args: [ --py36-plus ]
