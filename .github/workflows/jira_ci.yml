@@ -12,11 +12,11 @@ on:
 
 jobs:
   server:
-    uses: pycontribs/jira/.github/workflows/jira_server_ci.yml@main
+    uses: adehad/jira/.github/workflows/jira_server_ci.yml@main
 
   cloud:
     needs: server
-    uses: pycontribs/jira/.github/workflows/jira_cloud_ci.yml@main
+    uses: adehad/jira/.github/workflows/jira_cloud_ci.yml@main
     secrets:
       CLOUD_ADMIN: ${{ secrets.CI_JIRA_CLOUD_ADMIN }}
       CLOUD_ADMIN_TOKEN: ${{ secrets.CI_JIRA_CLOUD_ADMIN_TOKEN }}
