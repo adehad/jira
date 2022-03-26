@@ -24,7 +24,7 @@ coverage==6.0
     # via pytest-cov
 cryptography==35.0.0
     # via requests-kerberos
-decorator==5.1.0
+decorator==5.1.1
     # via
     #   ipython
     #   traitlets
