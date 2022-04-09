@@ -112,7 +112,7 @@ pyparsing==3.0.7
     # via packaging
 pyspnego==0.5.1
     # via requests-kerberos
-pytest==6.2.5
+pytest==7.1.1
     # via
     #   jira (setup.cfg)
     #   pytest-cache
@@ -197,10 +197,10 @@ tenacity==8.0.1
     # via jira (setup.cfg)
 termcolor==1.1.0
     # via pytest-sugar
-toml==0.10.2
-    # via pytest
 tomli==2.0.1
-    # via coverage
+    # via
+    #   coverage
+    #   pytest
 traitlets==5.1.1
     # via
     #   ipython
