@@ -44,7 +44,7 @@ jobs:
         run: |
           sudo apt-get update; sudo apt-get install gcc libkrb5-dev
           python -m pip install --upgrade pip
-          python -m pip install --upgrade tox tox-gh-actions
+          python -m pip install --upgrade tox
 
       - name: Lint with tox
         if: ${{ 'Skipped as pre-commit GHA also running'== 'true' }}
