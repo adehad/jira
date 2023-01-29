@@ -5,14 +5,27 @@ on:
   workflow_dispatch:
 
 jobs:
+  pre:
+    name: pre
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.generate_matrix.outputs.matrix }}
+    steps:
+      - name: Determine matrix
+        id: generate_matrix
+        uses: coactions/dynamic-matrix@v1
+        with:
+          other_names: |
+            py310
+            py39
+            py38
+
   test:
     name: py${{ matrix.python-version }}-jira${{ matrix.jira-version }}
-    runs-on: ${{ matrix.os }}
+    runs-on: ${{ matrix.os || 'ubuntu-latest'}}
     strategy:
       matrix:
-        os: [ubuntu-latest]
-        python-version: ["3.8", "3.9", "3.10"]
-        jira-version: [8.17.1]
+        ${{ fromJson(needs.pre.outputs.matrix) }} jira-version: [8.17.1]
 
     steps:
       - uses: actions/checkout@v3
@@ -51,7 +64,7 @@ jobs:
         run: tox -e lint
 
       - name: Test with tox
-        run: tox
+        run: tox run -e ${{ matrix.passed_name }}
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3.1.1
@@ -60,8 +73,4 @@ jobs:
           name: ${{ runner.os }}-${{ matrix.python-version }}
 
       - name: Run tox packaging
-        run: tox -e packaging
-
-      - name: Make docs
-        if: ${{ 'Skipped as readthedocs GHA also running'== 'true' }}
-        run: tox -e docs
+        run: tox run -e packaging
